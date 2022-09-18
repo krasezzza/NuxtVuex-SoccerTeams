@@ -1,8 +1,7 @@
-@import "./reset";
-@import "./theme";
+@import "reset";
+@import "theme";
+@import "typography";
 
-@import "./modules/nav";
-
-body {
-  background-color: $main-bnd-color;
-}
+@import "navigation";
+@import "page/header";
+@import "page/content";

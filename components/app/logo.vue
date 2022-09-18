@@ -1,11 +1,11 @@
 <template>
   <nuxt-link to="/">
     <img
-      src="../assets/img/back.svg"
+      :src="require('~/assets/img/back.svg')"
       alt="back-btn"
     >
     <img
-      src="../assets/img/logo-short.svg"
+      :src="require('~/assets/img/logo-short.svg')"
       alt="nav-logo"
     >
   </nuxt-link>

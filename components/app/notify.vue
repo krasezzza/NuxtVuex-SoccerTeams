@@ -1,7 +1,7 @@
 <template>
   <button @click="openNotifications()">
     <img
-      src="../assets/img/notification.svg"
+      :src="require('~/assets/img/notification.svg')"
       alt="nav-logo"
     >
     <div class="messages-count">
@@ -21,7 +21,7 @@
     },
     methods: {
       openNotifications() {
-        console.log('notify')
+        console.log('show notifications')
       }
     }
   }

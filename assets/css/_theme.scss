@@ -12,10 +12,11 @@ $nav-txt-color: #FFFFFF;
 
 $head-bnd-color: #112948;
 $head-txt-color: #FFFFFF;
+$head-bnd-level: #1D3451;
 
-$tab-txt-active: #FFFFFF;
+$tab-txt-active: #FFFFFF !important;
 $tab-txt-inactive: #6F8CAA;
 
-* {
-  font-family: 'Montserrat', sans-serif;
+body {
+  background-color: $main-bnd-color;
 }

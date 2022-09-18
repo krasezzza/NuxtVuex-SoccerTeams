@@ -6,7 +6,7 @@
   export default {
     data() {
       return {
-        pageTitle: 'Richy Rich'
+        pageTitle: 'RichyRich'
       }
     }
   }
@@ -14,6 +14,7 @@
 
 <style lang="scss" scoped>
   h3 {
+    margin-left: -40px;
     font-weight: bolder;
     font-style: italic;
     font-size: 14pt;
