@@ -1,6 +1,6 @@
 # Nuxt dev/build outputs
-.output
 .nuxt
+.output
 
 # Node dependencies
 node_modules
@@ -11,3 +11,6 @@ node_modules
 # VSCode related
 .vscode
 .history
+
+# Cache files
+.eslintcache
