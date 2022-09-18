@@ -7,6 +7,12 @@
 
       <header-tabs />
     </div>
+
+    <div class="page-content">
+      <content-search />
+
+      <content-teams />
+    </div>
   </main>
 </template>
 

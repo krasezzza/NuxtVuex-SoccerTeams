@@ -1,0 +1,67 @@
+.page-content {
+
+  .section-search,
+  .section-teams {
+    width: 100%;
+    margin: 0 auto 8px;
+    padding: 16px;
+    background-color: $section-bnd-color;
+
+    h4 {
+      margin-bottom: 16px;
+      font-weight: bold;
+      font-style: italic;
+      color: $secondary-color;
+    }
+  }
+
+  .section-search {
+    
+    form {
+
+      input {
+        width: 100%;
+        height: 36px;
+        padding: 0 14px 0 40px;
+        border-radius: 20px;
+        background-color: $section-teams-color;
+        z-index: 100;
+  
+        &::placeholder {
+          color: $details-txt;
+        }
+      }
+
+      .search-icon {
+        position: relative;
+        top: 27px;
+        right: -14px;
+        display: block;
+      }
+
+      .search-clear {
+        position: relative;
+        top: -27px;
+        left: calc(100% - 28px);
+        display: block;
+      }
+    }
+  }
+
+  .section-teams {
+
+    .no-teams {
+      height: 90px;
+      border-radius: 12px;
+      background-color: $section-teams-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        text-align: center;
+        color: $details-txt;
+      }
+    }
+  }
+}
