@@ -69,8 +69,17 @@
 
             <div class="team-actions">
               <button
+                v-if="team.is_following"
+                class="unfollow-btn"
+                @click="unfollowTeam(team)"
+              >
+                FOLLOWING
+              </button>
+
+              <button
+                v-else
                 class="follow-btn"
-                @click="toggleFollowing(team)"
+                @click="followTeam(team)"
               >
                 FOLLOW
               </button>
@@ -116,6 +125,9 @@
     computed: {
       isSearchNotEmpty() {
         return this.teamSearch.length > 0
+      },
+      followedTeams() {
+        return this.$store.state.followedTeams
       }
     },
     watch: {
@@ -136,8 +148,11 @@
       clearSearch() {
         this.teamSearch = ''
       },
-      toggleFollowing(selectedTeam) {
-        console.log('Selected Team', selectedTeam)
+      followTeam(selectedTeam) {
+        this.$store.dispatch('followTeam', selectedTeam)
+      },
+      unfollowTeam(selectedTeam) {
+        this.$store.dispatch('unfollowTeam', selectedTeam)
       }
     }
   }

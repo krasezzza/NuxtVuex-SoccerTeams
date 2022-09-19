@@ -3,7 +3,7 @@
     <h4>MY TEAMS</h4>
 
     <ul
-      v-if="followedTeams.length"
+      v-if="followedTeams && followedTeams.length"
       class="followed-list"
     >
       <li
@@ -40,7 +40,7 @@
   export default {
     computed: {
       followedTeams() {
-        return []
+        return this.$store.state.followedTeams
       }
     }
   }
