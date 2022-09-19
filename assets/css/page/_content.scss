@@ -46,9 +46,99 @@
         display: block;
       }
     }
+
+    .results-section {
+      margin: auto -16px;
+
+      .found-list {
+        
+        li {
+
+          .found-list-item {
+            padding: 8px 16px;
+            display: flex;
+
+            .team-placeholder {
+              max-width: 36px;
+              max-height: 36px;
+              margin-right: 20px;
+              padding: 6px;
+              border-radius: 50%;
+              background-color: $section-teams-color;
+            }
+
+            &:hover {
+              background-color: $section-teams-color;
+
+              .team-placeholder {
+                background-color: $section-bnd-color;
+              }
+            }
+
+            .team-details {
+
+              .leagues-list {
+                margin-bottom: 4px;
+                color: $details-txt;
+                font-size: 11px;
+              }
+
+              .team-name-and-stadium {
+                font-size: 14px;
+
+                .stadium-placeholder {
+                  max-height: 4px;
+                  margin-left: 8px;
+                  padding-left: 10px;
+                  border-left: 1px solid $separator-color;
+                  color: $details-txt;
+  
+                  .stadium-icon {
+                    margin-right: 4px;
+                    display: inline-block;
+                    width: 14px;
+                    height: 14px;
+                  }
+                }
+              }
+            }
+
+            .team-actions {
+              margin-left: auto;
+
+              .follow-btn {
+                padding: 8px 20px;
+                border-radius: 20px;
+                font-size: 13px;
+                font-weight: bold;
+                background-color: $main-color;
+                color: $section-teams-color;
+              }
+            }
+          }
+        }
+      }
+
+      .not-found {
+        text-align: center;
+
+        img {
+          margin-bottom: 10px;
+        }
+
+        p {
+          margin-bottom: 20px;
+          color: $details-txt;
+        }
+      }
+    }
   }
 
   .section-teams {
+
+    h4 {
+      margin-bottom: 32px;
+    }
 
     .no-teams {
       height: 90px;
