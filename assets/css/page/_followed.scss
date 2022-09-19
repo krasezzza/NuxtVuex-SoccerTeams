@@ -1,0 +1,60 @@
+.page-content {
+
+  .section-teams {
+
+    h4 {
+      margin-bottom: 32px;
+    }
+
+    .followed-list {
+      margin: auto -16px;
+
+      .followed-list-item {
+        padding: 8px 16px;
+        display: flex;
+
+        .team-placeholder {
+          max-width: 36px;
+          max-height: 36px;
+          margin-right: 20px;
+          padding: 6px;
+          border-radius: 50%;
+          background-color: $section-teams-color;
+        }
+
+        &:hover {
+          background-color: $section-teams-color;
+
+          .team-placeholder {
+            background-color: $section-bnd-color;
+          }
+        }
+
+        .team-details {
+          display: flex;
+          align-items: center;
+
+          .team-name {
+            font-size: 14px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .no-teams {
+      height: 90px;
+      border-radius: 12px;
+      font-size: 14px;
+      background-color: $section-teams-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        text-align: center;
+        color: $details-txt;
+      }
+    }
+  }
+}
