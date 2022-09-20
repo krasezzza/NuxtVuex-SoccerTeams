@@ -1,5 +1,7 @@
 <template>
-  <h3>{{ pageTitle }}</h3>
+  <h3 v-bind="$attrs">
+    {{ pageTitle }}
+  </h3>
 </template>
 
 <script>
@@ -11,12 +13,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-  h3 {
-    margin-left: -40px;
-    font-weight: bolder;
-    font-style: italic;
-    font-size: 14pt;
-  }
-</style>

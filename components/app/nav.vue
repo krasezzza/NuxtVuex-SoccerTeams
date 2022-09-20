@@ -2,7 +2,7 @@
   <nav>
     <app-logo />
 
-    <app-title />
+    <app-title class="nav-title" />
 
     <app-notify />
   </nav>

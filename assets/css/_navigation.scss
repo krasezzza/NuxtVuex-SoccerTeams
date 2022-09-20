@@ -8,6 +8,30 @@ nav {
   background-color: $nav-bnd-color;
   color: $nav-txt-color;
 
+  a {
+
+    .logo-short,
+    .logo-long {
+      max-height: 18px;
+    }
+
+    .logo-short {
+      display: inline-block;
+    }
+
+    .logo-long {
+      display: none;
+    }
+  }
+
+  .nav-title {
+    display: inline-block;
+    margin-left: -40px;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 14pt;
+  }
+
   button {
     .messages-count {
       width: 15px;

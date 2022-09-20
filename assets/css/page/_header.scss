@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
 
-    .top-wrapper {
+    .user-details {
       margin: 40px 0 30px;
 
       .user-avatar {
@@ -19,7 +19,7 @@
           height: 60px;
         }
       }
-  
+
       .user-level {
         padding: 2px 6px;
         text-align: center;
@@ -29,6 +29,13 @@
         h6 {
           font-weight: bold;
         }
+      }
+    }
+
+    .title-holder {
+
+      .user-title {
+        display: none;
       }
     }
   }
@@ -43,6 +50,7 @@
     .tab-title {
       margin: 0 12px;
       padding: 12px 6px;
+      font-size: 14px;
       font-weight: bold;
       color: $tab-txt-inactive;
       border-bottom: 3px solid $head-bnd-color;

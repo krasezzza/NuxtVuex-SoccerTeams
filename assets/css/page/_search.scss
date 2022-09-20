@@ -13,6 +13,7 @@
         z-index: 100;
   
         &::placeholder {
+          font-size: 14px;
           color: $details-txt;
         }
       }
@@ -33,7 +34,7 @@
     }
 
     .results-section {
-      margin: auto -16px;
+      margin: 0 -16px 4px;
 
       .found-list {
         
@@ -122,7 +123,7 @@
         }
 
         p {
-          margin-bottom: 20px;
+          font-size: 14px;
           color: $details-txt;
         }
       }

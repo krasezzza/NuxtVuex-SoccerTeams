@@ -4,9 +4,17 @@
       :src="require('~/assets/img/back.svg')"
       alt="back-btn"
     >
+
     <img
       :src="require('~/assets/img/logo-short.svg')"
-      alt="nav-logo"
+      class="logo-short"
+      alt="nav logo"
+    >
+
+    <img
+      :src="require('~/assets/img/logo-long.png')"
+      class="logo-long"
+      alt="nav logo"
     >
   </nuxt-link>
 </template>
