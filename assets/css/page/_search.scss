@@ -38,78 +38,76 @@
 
       .found-list {
         
-        li {
+        .found-list-item {
+          padding: 8px 16px;
+          display: flex;
 
-          .found-list-item {
-            padding: 8px 16px;
-            display: flex;
+          &:hover,
+          &.is-hovered {
+            background-color: $section-teams-color;
 
             .team-placeholder {
-              max-width: 36px;
-              max-height: 36px;
-              margin-right: 20px;
-              padding: 6px;
-              border-radius: 50%;
-              background-color: $section-teams-color;
+              background-color: $section-bnd-color;
+            }
+          }
+
+          .team-placeholder {
+            max-width: 36px;
+            max-height: 36px;
+            margin-right: 20px;
+            padding: 6px;
+            border-radius: 50%;
+            background-color: $section-teams-color;
+          }
+
+          .team-details {
+
+            .leagues-list {
+              margin-bottom: 4px;
+              color: $details-txt;
+              font-size: 11px;
             }
 
-            &:hover {
-              background-color: $section-teams-color;
+            .team-name-and-stadium {
+              font-size: 14px;
 
-              .team-placeholder {
-                background-color: $section-bnd-color;
-              }
-            }
-
-            .team-details {
-
-              .leagues-list {
-                margin-bottom: 4px;
+              .stadium-placeholder {
+                max-height: 4px;
+                margin-left: 8px;
+                padding-left: 10px;
+                border-left: 1px solid $separator-color;
                 color: $details-txt;
-                font-size: 11px;
-              }
 
-              .team-name-and-stadium {
-                font-size: 14px;
-
-                .stadium-placeholder {
-                  max-height: 4px;
-                  margin-left: 8px;
-                  padding-left: 10px;
-                  border-left: 1px solid $separator-color;
-                  color: $details-txt;
-  
-                  .stadium-icon {
-                    margin-right: 4px;
-                    display: inline-block;
-                    width: 14px;
-                    height: 14px;
-                  }
+                .stadium-icon {
+                  margin-right: 4px;
+                  display: inline-block;
+                  width: 14px;
+                  height: 14px;
                 }
               }
             }
+          }
 
-            .team-actions {
-              margin-left: auto;
+          .team-actions {
+            margin-left: auto;
 
-              .follow-btn {
-                padding: 8px 20px;
-                border-radius: 20px;
-                font-size: 13px;
-                font-weight: bold;
-                background-color: $main-color;
-                color: $section-teams-color;
-              }
+            .follow-btn {
+              padding: 8px 20px;
+              border-radius: 20px;
+              font-size: 13px;
+              font-weight: bold;
+              background-color: $main-color;
+              color: $section-teams-color;
+            }
 
-              .unfollow-btn {
-                padding: 8px 20px;
-                border-radius: 20px;
-                border: 1px solid $main-color;
-                font-size: 13px;
-                font-weight: bold;
-                background-color: $section-teams-color;
-                color: $main-color;
-              }
+            .unfollow-btn {
+              padding: 8px 20px;
+              border-radius: 20px;
+              border: 1px solid $main-color;
+              font-size: 13px;
+              font-weight: bold;
+              background-color: $section-teams-color;
+              color: $main-color;
             }
           }
         }
@@ -129,4 +127,8 @@
       }
     }
   }
+}
+
+.highlighted {
+  color: $main-color;
 }
