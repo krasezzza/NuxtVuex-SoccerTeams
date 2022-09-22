@@ -1,5 +1,8 @@
 <template>
-  <h3 v-bind="$attrs">
+  <h3
+    v-bind="$attrs"
+    v-on="$listeners"
+  >
     {{ pageTitle }}
   </h3>
 </template>

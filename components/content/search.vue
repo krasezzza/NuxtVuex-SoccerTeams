@@ -1,8 +1,10 @@
 <template>
-  <div class="section-search">
+  <div
+    class="section-search"
+  >
     <h4>SEARCH TEAMS</h4>
 
-    <form>
+    <form @submit.prevent>
       <img
         :src="require('~/assets/img/search.svg')"
         class="search-icon"
@@ -10,9 +12,12 @@
       >
 
       <input
-        v-model="teamSearch"
+        ref="searchInput"
+        v-model="searchQuery"
         type="search"
         :placeholder="isLoading ? 'Loading...' : 'Search for a team'"
+        @keydown.up="onArrowUp"
+        @keydown.down="onArrowDown"
       >
 
       <button
@@ -36,54 +41,64 @@
         class="found-list"
       >
         <li
-          v-for="team in teamsFound"
+          v-for="(team, idx) in teamsFound"
           :key="team.id"
+          class="found-list-item"
+          :class="{ 'is-hovered': idx === hoveredIndex }"
+          @mousemove="onMouseMove(idx)"
         >
-          <div class="found-list-item">
-            <div class="team-placeholder">
-              <img
-                :src="require('~/assets/img/team.png')"
-                alt="team placeholder"
-              >
-            </div>
+          <div class="team-placeholder">
+            <img
+              :src="require('~/assets/img/team.png')"
+              alt="team placeholder"
+            >
+          </div>
 
-            <div class="team-details">
-              <p class="leagues-list">
-                {{ team.leagues.toString().replace(',', ', ') }}
-              </p>
+          <div class="team-details">
+            <p class="leagues-list">
+              <content-result
+                :search-query="searchQuery"
+                :search-result="team.leagues.toString().replace(',', ', ')"
+              />
+            </p>
 
-              <p class="team-name-and-stadium">
-                {{ team.name }}
+            <p class="team-name-and-stadium">
+              <content-result
+                :search-query="searchQuery"
+                :search-result="team.name"
+              />
 
-                <span class="stadium-placeholder">
-                  <img
-                    :src="require('~/assets/img/stadium.svg')"
-                    class="stadium-icon"
-                    alt="stadium icon"
-                  >
+              <span class="stadium-placeholder">
+                <img
+                  :src="require('~/assets/img/stadium.svg')"
+                  class="stadium-icon"
+                  alt="stadium icon"
+                >
 
-                  {{ team.stadium }}
-                </span>
-              </p>
-            </div>
+                <content-result
+                  :search-query="searchQuery"
+                  :search-result="team.stadium"
+                />
+              </span>
+            </p>
+          </div>
 
-            <div class="team-actions">
-              <button
-                v-if="team.is_following"
-                class="unfollow-btn"
-                @click="unfollowTeam(team)"
-              >
-                FOLLOWING
-              </button>
+          <div class="team-actions">
+            <button
+              v-if="team.is_following"
+              class="unfollow-btn"
+              @click="unfollowTeam(team)"
+            >
+              FOLLOWING
+            </button>
 
-              <button
-                v-else
-                class="follow-btn"
-                @click="followTeam(team)"
-              >
-                FOLLOW
-              </button>
-            </div>
+            <button
+              v-else
+              class="follow-btn"
+              @click="followTeam(team)"
+            >
+              FOLLOW
+            </button>
           </div>
         </li>
       </ul>
@@ -108,32 +123,36 @@
     data() {
       return {
         teamsList: [],
-        teamSearch: '',
+        searchQuery: '',
         teamsFound: null,
+        hoveredIndex: 0,
         isLoading: false
       }
     },
     async fetch() {
       this.isLoading = true
 
-      this.teamsList = await this.$axios.get('https://run.mocky.io/v3/ef80523b-0474-4104-8fe6-fe92f8360b28').then((response) => {
-        return response.data
-      })
+      this.teamsList = await this.$axios.get(
+          'https://run.mocky.io/v3/ef80523b-0474-4104-8fe6-fe92f8360b28'
+        ).then((response) => {
+          return response.data
+        }
+      )
 
       this.isLoading = false
     },
     computed: {
       isSearchNotEmpty() {
-        return this.teamSearch.length > 0
+        return this.searchQuery.length > 0
       },
       followedTeams() {
         return this.$store.state.followedTeams
       }
     },
     watch: {
-      teamSearch() {
-        if (this.teamSearch.length) {
-          const queryString = this.teamSearch.toLowerCase()
+      searchQuery() {
+        if (this.searchQuery.length) {
+          const queryString = this.searchQuery.toLowerCase()
 
           this.teamsFound = this.teamsList.filter(team => 
               team.name.toLowerCase().includes(queryString) ||
@@ -141,12 +160,27 @@
               (team.leagues.toString().toLowerCase()).includes(queryString))
         } else {
           this.teamsFound = null
+          this.hoveredIndex = 0
         }
       }
     },
     methods: {
       clearSearch() {
-        this.teamSearch = ''
+        this.searchQuery = ''
+      },
+      onMouseMove(idx) {
+        this.hoveredIndex = idx
+        this.$refs.searchInput.focus()
+      },
+      onArrowUp() {
+        if (this.hoveredIndex > 0) {
+          this.hoveredIndex--
+        }
+      },
+      onArrowDown() {
+        if (this.teamsFound && this.hoveredIndex < (this.teamsFound.length - 1)) {
+          this.hoveredIndex++
+        }
       },
       followTeam(selectedTeam) {
         this.$store.dispatch('followTeam', selectedTeam)
