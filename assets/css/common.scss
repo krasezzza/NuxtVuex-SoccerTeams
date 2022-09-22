@@ -5,7 +5,9 @@
 @import "navigation";
 @import "page/header";
 @import "page/content";
-@import "page/search";
-@import "page/followed";
+@import "page/tabs";
+@import "page/tabs/search";
+@import "page/tabs/followed";
+@import "page/tabs/about";
 
 @import "responsive";

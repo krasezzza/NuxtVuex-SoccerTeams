@@ -1,6 +1,6 @@
 <template>
   <div class="section-teams">
-    <h4>MY TEAMS</h4>
+    <h4>My Teams</h4>
 
     <ul
       v-if="followedTeams && followedTeams.length"

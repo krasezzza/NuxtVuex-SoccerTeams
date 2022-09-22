@@ -2,18 +2,24 @@
   <main>
     <app-nav />
 
-    <div class="page-wrapper">
-      <div class="page-header">
-        <header-top />
+    <div class="wrapper">
+      <page-header />
 
-        <header-tabs />
-      </div>
+      <page-tabs :tab-list="['My Teams', 'About']">
+        <template #tabPanel-0>
+          <div class="content">
+            <content-search />
 
-      <div class="page-content">
-        <content-search />
+            <content-teams />
+          </div>
+        </template>
 
-        <content-teams />
-      </div>
+        <template #tabPanel-1>
+          <div class="content">
+            <content-about />
+          </div>
+        </template>
+      </page-tabs>
     </div>
   </main>
 </template>

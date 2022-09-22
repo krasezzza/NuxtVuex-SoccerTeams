@@ -1,0 +1,30 @@
+.page-tabs {
+
+  .tab-navigation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: $head-bnd-color;
+
+    .tab-buttons {
+      margin: 0 12px;
+      padding: 5px 6px 0;
+      cursor: pointer;
+      color: $tab-txt-inactive;
+  
+      .tab-title {
+        display: inline-block;
+        line-height: 28px;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-bottom: 3px solid $head-bnd-color;
+      }
+
+      &.active {
+        color: $tab-txt-active;
+        border-bottom: 3px solid $main-color;
+      }
+    }
+  }
+}

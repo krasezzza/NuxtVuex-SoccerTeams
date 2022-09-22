@@ -1,8 +1,6 @@
 <template>
-  <div
-    class="section-search"
-  >
-    <h4>SEARCH TEAMS</h4>
+  <div class="section-search">
+    <h4>Search Teams</h4>
 
     <form @submit.prevent>
       <img
