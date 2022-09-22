@@ -35,9 +35,6 @@
         .user-title {
           display: inline-block;
           margin-left: 20px;
-          font-weight: bolder;
-          font-style: italic;
-          font-size: 12pt;
         }
       }
     }
@@ -49,5 +46,31 @@
         border-bottom-right-radius: 10px;
       }
     }
+  }
+}
+
+/* When the browser is smaller than 540px */
+@media screen and (max-width: 540px) {
+
+  .leagues-text span {
+    font-size: 9pt;
+  }
+
+  .team-name span {
+    font-size: 12pt;
+  }
+
+  .stadium-name span {
+    font-size: 10pt;
+  }
+
+  .btn-text {
+    font-size: 11pt;
+  }
+
+  .follow-btn,
+  .unfollow-btn {
+    padding: 6px 18px !important;
+    border-radius: 18px !important;
   }
 }

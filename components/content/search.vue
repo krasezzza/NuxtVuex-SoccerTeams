@@ -1,6 +1,8 @@
 <template>
   <div class="section-search">
-    <h4>Search Teams</h4>
+    <span class="section-title">
+      Search Teams
+    </span>
 
     <form @submit.prevent>
       <img
@@ -57,6 +59,7 @@
               <content-result
                 :search-query="searchQuery"
                 :search-result="team.leagues.toString().replace(',', ', ')"
+                class="leagues-text"
               />
             </p>
 
@@ -64,6 +67,7 @@
               <content-result
                 :search-query="searchQuery"
                 :search-result="team.name"
+                class="team-name"
               />
 
               <span class="stadium-placeholder">
@@ -76,6 +80,7 @@
                 <content-result
                   :search-query="searchQuery"
                   :search-result="team.stadium"
+                  class="stadium-name"
                 />
               </span>
             </p>
@@ -87,7 +92,9 @@
               class="unfollow-btn"
               @click="unfollowTeam(team)"
             >
-              FOLLOWING
+              <span class="btn-text">
+                FOLLOWING
+              </span>
             </button>
 
             <button
@@ -95,7 +102,9 @@
               class="follow-btn"
               @click="followTeam(team)"
             >
-              FOLLOW
+              <span class="btn-text">
+                FOLLOW
+              </span>
             </button>
           </div>
         </li>

@@ -14,12 +14,13 @@ $head-bnd-color: #112948;
 $head-txt-color: #FFFFFF;
 $head-bnd-level: #1D3451;
 
-$tab-txt-active: #FFFFFF !important;
+$tab-txt-active: #FFFFFF;
 $tab-txt-inactive: #6F8CAA;
 
 $section-bnd-color: #FFFFFF;
 $section-teams-color: #F5F7F9;
 
 body {
+  min-width: 375px;
   background-color: $main-bnd-color;
 }

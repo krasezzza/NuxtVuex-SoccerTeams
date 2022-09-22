@@ -24,31 +24,18 @@ nav {
     }
   }
 
-  .nav-title {
-    display: inline-block;
-    margin-left: -40px;
-    font-weight: bolder;
-    font-style: italic;
-    font-size: 14pt;
-  }
-
   button {
     .messages-count {
-      width: 15px;
-      height: 15px;
+      width: 14pt;
+      height: 14pt;
       position: relative;
-      top: -13px;
-      left: 13px;
+      top: -11pt;
+      left: 8pt;
       display: flex;
       justify-content: center;
       border-radius: 50%;
-      border: 2px solid $nav-bnd-color;
+      border: 2pt solid $nav-bnd-color;
       background-color: $main-color;
-
-      .count-number {
-        font-size: 9px;
-        font-weight: bold;
-      }
     }
   }
 }

@@ -2,14 +2,17 @@
 
   .section-about {
 
-    h4 {
-      margin-bottom: 22px;
+    .section-title {
       text-transform: uppercase;
     }
 
-    p {
-      margin-bottom: 12px;
-      text-align: justify;
+    .about-text {
+      padding: 16px 0;
+
+      .general-text {
+        margin-bottom: 12px;
+        text-align: justify;
+      }
     }
   }
 }

@@ -3,12 +3,13 @@
     v-bind="$attrs"
     v-on="$listeners"
   >
-    <div v-if="hasStringMatch">
+    <span v-if="hasStringMatch">
       {{ start }}<span class="highlighted">{{ match }}</span>{{ end }}
-    </div>
-    <div v-else>
+    </span>
+
+    <span v-else>
       {{ searchResult }}
-    </div>
+    </span>
   </span>
 </template>
 
@@ -54,9 +55,3 @@
     }
   }
 </script>
-
-<style scoped>
-  div {
-    display: inline;
-  }
-</style>

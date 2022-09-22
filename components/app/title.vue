@@ -1,10 +1,10 @@
 <template>
-  <h3
+  <span
     v-bind="$attrs"
     v-on="$listeners"
   >
     {{ pageTitle }}
-  </h3>
+  </span>
 </template>
 
 <script>

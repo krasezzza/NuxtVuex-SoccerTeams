@@ -1,5 +1,7 @@
 <template>
   <div class="user-level">
-    <h6>Level 5</h6>
+    <span class="level-title">
+      Level 5
+    </span>
   </div>
 </template>

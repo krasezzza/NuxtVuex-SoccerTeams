@@ -63,18 +63,15 @@
 
             .leagues-list {
               margin-bottom: 4px;
-              color: $details-txt;
-              font-size: 11px;
             }
 
             .team-name-and-stadium {
-              font-size: 14px;
 
               .stadium-placeholder {
                 max-height: 4px;
-                margin-left: 8px;
+                margin-left: 6px;
                 padding-left: 10px;
-                border-left: 1px solid $separator-color;
+                border-left: 1pt solid $separator-color;
                 color: $details-txt;
 
                 .stadium-icon {
@@ -89,22 +86,22 @@
 
           .team-actions {
             margin-left: auto;
+            display: flex;
+            align-items: center;
 
-            .follow-btn {
+            .follow-btn,
+            .unfollow-btn {
               padding: 8px 20px;
               border-radius: 20px;
-              font-size: 13px;
-              font-weight: bold;
+            }
+
+            .follow-btn {
               background-color: $main-color;
               color: $section-teams-color;
             }
 
             .unfollow-btn {
-              padding: 8px 20px;
-              border-radius: 20px;
               border: 1px solid $main-color;
-              font-size: 13px;
-              font-weight: bold;
               background-color: $section-teams-color;
               color: $main-color;
             }
@@ -126,8 +123,4 @@
       }
     }
   }
-}
-
-.highlighted {
-  color: $main-color;
 }

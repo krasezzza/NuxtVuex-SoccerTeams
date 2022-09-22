@@ -1,6 +1,8 @@
 <template>
   <div class="section-teams">
-    <h4>My Teams</h4>
+    <span class="section-title">
+      My Teams
+    </span>
 
     <ul
       v-if="followedTeams && followedTeams.length"
@@ -31,7 +33,9 @@
       v-else
       class="no-teams"
     >
-      <span>You aren't following any teams yet.</span>
+      <span class="general-text">
+        You aren't following any teams yet.
+      </span>
     </div>
   </div>
 </template>

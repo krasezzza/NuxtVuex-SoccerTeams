@@ -3,12 +3,8 @@
   .section-teams {
     padding-bottom: 8px;
 
-    h4 {
-      margin-bottom: 32px;
-    }
-
     .followed-list {
-      margin: auto -16px;
+      margin: 16px -16px 0;
 
       .followed-list-item {
         padding: 8px 16px;
@@ -34,28 +30,21 @@
         .team-details {
           display: flex;
           align-items: center;
-
-          .team-name {
-            font-size: 14px;
-            font-weight: bold;
-          }
         }
       }
     }
 
     .no-teams {
       height: 90px;
-      margin-bottom: 8px;
+      margin: 16px 0 8px;
       border-radius: 12px;
-      font-size: 14px;
       background-color: $section-teams-color;
       display: flex;
       align-items: center;
       justify-content: center;
 
-      span {
+      .no-teams-text {
         text-align: center;
-        color: $details-txt;
       }
     }
   }
