@@ -25,3 +25,5 @@ npm run dev
 ```
 
 By default, the server's port is 3000, so in case you haven't changed it for some reason you can go to the corresponding URL in your browser [http://localhost:3000](http://localhost:3000)
+
+This setup works with a preinstalled Node v18!
